@@ -26,6 +26,8 @@ dependencies:
   google_fonts: ^0.3.8
   grouped_checkbox: ^1.0.0
   animated_card: ^1.0.0+8
+  provider: ^4.0.5
+  http:
 
 dev_dependencies:
   flutter_test:
