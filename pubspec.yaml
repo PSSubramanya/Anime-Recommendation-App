@@ -26,12 +26,18 @@ dependencies:
   google_fonts: ^0.3.8
   grouped_checkbox: ^1.0.0
   animated_card: ^1.0.0+8
+  flutter_launcher_icons: "^0.7.3"
   provider: ^4.0.5
   http:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/konoha2.jpg"
 
 
 # For information on the generic Dart part of this file, see the

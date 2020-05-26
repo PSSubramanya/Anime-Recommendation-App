@@ -217,17 +217,18 @@ class RecommendPageState extends State<RecommendPage> {
               child: Consumer<RecommendationController>(
                   builder: (context, recommendationController, _) {
                 return (recommendationController.model.isNotEmpty)
+                
                     ? ListView.builder(
                         physics: ClampingScrollPhysics(),
-                        itemCount: recommendationController.model.length,
+                        itemCount: recommendationController.model.length,                        
                         itemBuilder: (BuildContext context, int index) {
                           return Column(
                             children: <Widget>[
                               AnimatedCard(
                                 curve: Curves.ease,
                                 direction: AnimatedCardDirection.bottom,
-                                initDelay: Duration(milliseconds: 0),
-                                duration: Duration(seconds: 1),
+                                initDelay: Duration(milliseconds: 1),
+                                duration: Duration(seconds: 3),
                                 child: Padding(
                                   padding: EdgeInsets.only(
                                       top: MediaQuery.of(context)
@@ -335,7 +336,10 @@ class RecommendPageState extends State<RecommendPage> {
                                                               // "DTLabz",
                                                               // notificationController
                                                               //     .notify_by[index],
+
                                                               "${recommendationController.model[index].name}",
+
+                                                              // testAnimeNames[index],
                                                               style: GoogleFonts
                                                                   .roboto(
                                                                 textStyle: TextStyle(
@@ -375,6 +379,7 @@ class RecommendPageState extends State<RecommendPage> {
                                                               1.35,
                                                       child: Text(
                                                         "${recommendationController.model[index].genre}",
+                                                        // testGenreAnime[index],
                                                         style: GoogleFonts.lato(
                                                           textStyle: TextStyle(
                                                               color: Color(

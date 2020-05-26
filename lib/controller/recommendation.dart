@@ -18,18 +18,21 @@ class RecommendationController extends ChangeNotifier {
   getRecommandation() async {
     try{
       model.clear();
-      http.Request request = http.Request("GET", Uri.parse("http://15.206.75.96/anime/?anime=${animeName.text}."));
+      print(animeName.text);
+      // http.Request request = http.Request("GET", Uri.parse("http://15.206.75.96:8000/anime/?anime=${animeName.text}"));
+      http.Request request = http.Request("GET", Uri.parse("https://django-recommend.herokuapp.com/anime/?anime=${animeName.text}"));
       http.StreamedResponse response = await request.send();
       if(response.statusCode == 200){
         var obj = await utf8.decodeStream(response.stream);
         var data = json.decode(obj);
+        print(data);
         data.forEach((element){
           model.add(AnimeResponseModel.fromJson(element));
         });
         notifyListeners();
       }
     }catch(e){
-
+      print(e);
     }
   }
 }
